@@ -3,7 +3,7 @@ package de.spielemanufaktur.adminbackend.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import de.spielemanufaktur.backend.model.User;
+import de.spielemanufaktur.adminbackend.model.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
