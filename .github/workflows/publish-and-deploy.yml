@@ -10,7 +10,7 @@ on:
         branches: [feature-dev]
 env:
     REGISTRY: ghcr.io
-    IMAGE_NAME: sparkobbable/dispiele-backend:dev
+    IMAGE_NAME: sparkobbable/dispiele-admin-backend:dev
 jobs:
     publish:
         name: publish image
