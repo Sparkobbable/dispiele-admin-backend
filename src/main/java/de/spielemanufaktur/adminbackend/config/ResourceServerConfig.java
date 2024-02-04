@@ -11,7 +11,7 @@ import org.springframework.security.web.SecurityFilterChain;
 public class ResourceServerConfig {
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.authorizeRequests().requestMatchers("/authproxy/**").permitAll().and()
+        http.authorizeHttpRequests().requestMatchers("/authproxy/**").permitAll().and()
                 .securityMatcher("/admin/**")
                 .authorizeHttpRequests()
                 .requestMatchers("/admin/**").hasAuthority("ADMIN")
