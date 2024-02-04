@@ -41,6 +41,6 @@ public class AuthController {
                         "authorization_code", code, redirect_uri), HttpMethod.POST, entity, AccessTokenDTO.class);
         log.info(resp.getStatusCode());
         log.info(resp.getBody().getAccess_token());
-        return resp;
+        return new ResponseEntity<AccessTokenDTO>(resp.getBody(), HttpStatus.OK);
     }
 }
