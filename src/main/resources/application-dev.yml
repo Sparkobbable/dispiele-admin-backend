@@ -28,7 +28,7 @@ spring:
         oauth2:
             resourceserver:
                 jwt:
-                    issuer-uri: http://auth:9000
+                    issuer-uri: http://auth-dev:9000
 springdoc:
     swagger-ui:
         path: /api/v1/swagger
