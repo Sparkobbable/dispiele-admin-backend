@@ -13,7 +13,7 @@ public class ResourceServerConfig {
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.securityMatcher("/**")
                 .authorizeHttpRequests()
-                .requestMatchers("/oauthproxy/**").permitAll()
+                .requestMatchers("/authproxy/**").permitAll()
                 .requestMatchers("/admin/**").hasAuthority("ADMIN")
                 .and()
                 .oauth2ResourceServer()

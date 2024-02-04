@@ -29,7 +29,7 @@ public class AuthController {
 
     private static final String CLIENT_ID = "dispiele_admin_site";
 
-    @GetMapping("/oauthproxy/token")
+    @GetMapping("/authproxy/token")
     public ResponseEntity<AccessTokenDTO> getAccessToken(
             @RequestParam String code, @RequestParam String redirect_uri) {
         log.info("Get Accesstoken for code {}", code);
