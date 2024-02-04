@@ -36,7 +36,11 @@ public class AuthController {
         HttpHeaders headers = new HttpHeaders();
         headers.setBasicAuth(CLIENT_ID, clientSecret);
         HttpEntity<Object> entity = new HttpEntity<>(headers);
-        return new RestTemplate().exchange(String.format(authUrl + "/oauth/token?grant_type=%s&code=%s&redirect_uri=%s",
-                "authorization_code", code, redirect_uri), HttpMethod.POST, entity, AccessTokenDTO.class);
+        ResponseEntity<AccessTokenDTO> resp = new RestTemplate()
+                .exchange(String.format(authUrl + "/oauth/token?grant_type=%s&code=%s&redirect_uri=%s",
+                        "authorization_code", code, redirect_uri), HttpMethod.POST, entity, AccessTokenDTO.class);
+        log.info(resp.getStatusCode());
+        log.info(resp.getBody().getAccess_token());
+        return resp;
     }
 }
